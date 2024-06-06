@@ -17,5 +17,11 @@ public class AppDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         modelBuilder.Entity<Prescription_Medicament>()
             .HasKey(pm => new { pm.IdMedicament, pm.IdPrescription });
+
+        modelBuilder.Entity<Doctor>().HasKey(d => d.IdDoctor);
+        modelBuilder.Entity<Patient>().HasKey(p => p.IdPatient);
+        modelBuilder.Entity<Medicament>().HasKey(m => m.IdMedicament);
+        modelBuilder.Entity<Prescription>().HasKey(pr => pr.IdPrescription);
     }
 }
+
